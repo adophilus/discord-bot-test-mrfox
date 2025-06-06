@@ -13,9 +13,7 @@
     "@types/bun": "latest",
     "@types/pg": "^8.15.4",
     "kysely-ctl": "^0.13.1",
-    "kysely-migration-cli": "^0.4.2"
-  },
-  "peerDependencies": {
+    "kysely-migration-cli": "^0.4.2",
     "typescript": "^5"
   },
   "dependencies": {
