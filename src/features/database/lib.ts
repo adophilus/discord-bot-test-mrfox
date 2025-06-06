@@ -1,24 +1,23 @@
-import { config } from "@/features/config";
-import { TablePrefixPlugin, IndexPrefixPlugin } from "kysely-plugin-prefix";
-import type { Database } from "./types.ts";
-import { Kysely, PostgresDialect } from "kysely";
+import { config } from '../config'
+import { TablePrefixPlugin, IndexPrefixPlugin } from 'kysely-plugin-prefix'
+import type { Database as TDatabase } from './types.ts'
+import { Database } from 'bun:sqlite'
+import { Kysely } from 'kysely'
+import { BunSqliteDialect } from 'kysely-bun-sqlite'
 
-import pg from "pg";
+const database = new Database(config.db.url, { strict: true })
+database.exec('PRAGMA journal_mode = WAL;')
 
-const { Pool } = pg;
+const dialect = new BunSqliteDialect({
+  database
+})
 
-const pool = new Pool({
-	connectionString: config.db.url,
-});
+export const options = {
+  dialect,
+  plugins: [
+    new TablePrefixPlugin({ prefix: config.db.prefix ?? '' }),
+    new IndexPrefixPlugin({ prefix: config.db.prefix ?? '' })
+  ]
+}
 
-const dialect = new PostgresDialect({
-	pool,
-});
-
-export const db = new Kysely<Database>({
-	dialect,
-	plugins: [
-		new TablePrefixPlugin({ prefix: config.db.prefix ?? "" }),
-		new IndexPrefixPlugin({ prefix: config.db.prefix ?? "" }),
-	],
-});
+export const db = new Kysely<TDatabase>(options)
