@@ -4,6 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "start": "bun ./src/index.ts",
     "dev": "bun --watch ./src/index.ts",
     "lint": "tsc",
     "migrate": "bun ./scripts/migrate.ts"
