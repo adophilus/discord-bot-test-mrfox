@@ -63,6 +63,16 @@ namespace Repository {
       return Result.err('ERR_UNEXPECTED')
     }
   }
+
+  export const getAllReplies = async () => {
+    try {
+      const replies = await db.selectFrom('replies').selectAll().execute()
+      return Result.ok(replies)
+    } catch (err) {
+      console.error('Error getting all replies:', err)
+      return Result.err('ERR_UNEXPECTED')
+    }
+  }
 }
 
 export default Repository

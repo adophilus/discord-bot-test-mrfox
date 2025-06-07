@@ -19,6 +19,8 @@
   "dependencies": {
     "@t3-oss/env-core": "^0.13.6",
     "discord.js": "^14.19.3",
+    "exceljs": "^4.4.0",
+    "googleapis": "^150.0.1",
     "kysely": "^0.28.2",
     "kysely-bun-sqlite": "^0.4.0",
     "kysely-plugin-prefix": "^1.2.2",
