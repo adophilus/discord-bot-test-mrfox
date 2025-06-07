@@ -1,5 +1,5 @@
 import { google } from 'googleapis'
-import credentials from '../../../secrets/google-service-account.json' with {
+import credentials from '../../../.secrets/google-service-account.json' with {
   type: 'json'
 }
 
