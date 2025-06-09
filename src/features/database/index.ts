@@ -1,2 +1,2 @@
-export { db } from "./lib";
-export * as types from "./types";
+export { db } from './lib'
+export * as types from './types'

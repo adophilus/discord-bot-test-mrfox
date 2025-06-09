@@ -1,7 +1,7 @@
 import { Result, type Unit } from 'true-myth'
 import { sheets } from './client'
 
-const SPREADSHEET_ID = '1GPij5xX_wOl8AoHiEvIDJaKTaWh-bYQKOEaOBFNgnwY'
+const SPREADSHEET_ID = process.env.GOOGLE_SHEET_ID
 
 export type Error = 'ERR_UNEXPECTED'
 

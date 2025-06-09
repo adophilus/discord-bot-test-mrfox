@@ -168,6 +168,9 @@ client.on('messageCreate', async (msg: Message) => {
 
   let discordProfile = profileResult.value
   if (!discordProfile) {
+    console.log(
+      `🔍 Creating new profile for ${msg.author.username} (${msg.author.id})`
+    )
     const createProfileResult = await DiscordProfileRepository.createProfile({
       id: ulid(),
       discord_user_id: msg.author.id,
