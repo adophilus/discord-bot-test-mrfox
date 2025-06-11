@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "start": "bun ./src/index.ts",
-    "build": "bun ./scripts/build.ts",
     "dev": "bun --watch ./src/index.ts",
     "lint": "tsc",
     "migrate": "bun ./scripts/migrate.ts"
