@@ -15,6 +15,8 @@ import { DiscordProfileRepository } from '@/features/discord-profile'
 import { updateRepliesSheet } from '@/features/sheets/sync'
 import type { DiscordProfile } from './types'
 
+// just to rebuild
+
 const client = new Client({
   intents: [
     IntentsBitField.Flags.Guilds,
